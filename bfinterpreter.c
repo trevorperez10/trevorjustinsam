@@ -15,6 +15,7 @@ void fumarole (char* ascii, int arr[])
     int searchingpos = 0;
     for(int i = 0; ascii[i] != '\0'; i++)
     {
+        //printf("%d\n", man);
         if (searching == false)
         {
             if (ascii[i] == '>')
@@ -71,9 +72,11 @@ void fumarole (char* ascii, int arr[])
                 if (man == 0)
                 {
                     searching = true;
-                    searchingpos = i;
+                    //printf("%d\n",searchingpos );
                     countopen += 1;
                 }
+                searchingpos = i;
+
             }
             else if (ascii[i] == ')')
             {
@@ -81,12 +84,12 @@ void fumarole (char* ascii, int arr[])
                 {
                     i = searchingpos - 1;
                 }
-                
+
             }
         
             else if (ascii[i] == '*')
             {
-                printf("%d ", man);
+                printf( "%c", man);
             }
        }
        else
